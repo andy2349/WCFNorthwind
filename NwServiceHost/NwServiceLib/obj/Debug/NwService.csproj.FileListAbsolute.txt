@@ -1,0 +1,10 @@
+D:\Training\NwService\NwService\bin\Debug\NwService.dll.config
+D:\Training\NwService\NwService\bin\Debug\NwService.dll
+D:\Training\NwService\NwService\bin\Debug\NwService.pdb
+D:\Training\NwService\NwService\bin\Debug\EntityFramework.dll
+D:\Training\NwService\NwService\bin\Debug\EntityFramework.SqlServer.dll
+D:\Training\NwService\NwService\bin\Debug\EntityFramework.xml
+D:\Training\NwService\NwService\bin\Debug\EntityFramework.SqlServer.xml
+D:\Training\NwService\NwService\obj\Debug\NwService.dll
+D:\Training\NwService\NwService\obj\Debug\NwService.pdb
+D:\Training\NwService\NwService\obj\Debug\NwService.csprojResolveAssemblyReference.cache

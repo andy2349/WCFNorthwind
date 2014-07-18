@@ -1,0 +1,65 @@
+﻿<Window x:Class="NwServiceClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="388.551" Width="766.449">
+    <DockPanel>
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="OnTabSelection">
+            <TabItem x:Name="tabCustomers" Header="Customers">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="725*"/>
+                    </Grid.ColumnDefinitions>
+                    <ToolBar HorizontalAlignment="Stretch" Height="27" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                        <Button Content="Refresh" Click="RefreshCustomers"/>
+                    </ToolBar>
+                    <DataGrid x:Name="gridCustomers" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" Margin="0,27,0,0" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" AlternationCount="2" IsReadOnly="True" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding CustomerID}" />
+                            <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}" />
+                            <DataGridTextColumn Header="Contact Name" Binding="{Binding ContactName}" />
+                            <DataGridTextColumn Header="Contact Title" Binding="{Binding ContactTitle}" />
+                            <DataGridTextColumn Header="Address" Binding="{Binding Address}" />
+                            <DataGridTextColumn Header="City" Binding="{Binding City}" />
+                            <DataGridTextColumn Header="Region" Binding="{Binding Region}" />
+                            <DataGridTextColumn Header="Postal Code" Binding="{Binding PostalCode}" />
+                            <DataGridTextColumn Header="Country" Binding="{Binding Country}" />
+                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" />
+                            <DataGridTextColumn Header="Fax" Binding="{Binding Fax}" />                       
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabEmployees" Header="Employees">
+                <Grid Background="#FFE5E5E5">
+                    <ToolBar HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <Button Content="Refresh" Click="RefreshEmployees"/>
+                        <Separator/>
+                        <Label Content="Birth Date:"/>
+                        <DatePicker x:Name="dtpBirth"/>
+                        <Label Content="Hire Date:"/>
+                        <DatePicker x:Name="dtpHire"/>
+                    </ToolBar>
+                    <DataGrid x:Name="gridEmployees" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,31,0,0" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding EmployeeID}" />
+                            <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                            <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                            <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                            <DataGridTextColumn Header="Title of Courtesy" Binding="{Binding TitleOfCourtesy}" />
+                            <DataGridTextColumn Header="Birth Date" Binding="{Binding BirthDate}" />
+                            <DataGridTextColumn Header="Hire Date" Binding="{Binding HireDate}" />
+                            <DataGridTextColumn Header="Address" Binding="{Binding Address}" />
+                            <DataGridTextColumn Header="City" Binding="{Binding City}" />
+                            <DataGridTextColumn Header="Region" Binding="{Binding Region}" />
+                            <DataGridTextColumn Header="Postal Code" Binding="{Binding PostalCode}" />
+                            <DataGridTextColumn Header="Country" Binding="{Binding Country}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+
+    </DockPanel>
+</Window>

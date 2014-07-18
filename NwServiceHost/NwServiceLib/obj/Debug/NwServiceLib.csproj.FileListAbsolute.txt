@@ -1,0 +1,10 @@
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\obj\Debug\NwServiceLib.csprojResolveAssemblyReference.cache
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\bin\Debug\NwServiceLib.dll.config
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\bin\Debug\NwServiceLib.dll
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\bin\Debug\NwServiceLib.pdb
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\bin\Debug\EntityFramework.dll
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\bin\Debug\EntityFramework.xml
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\obj\Debug\NwServiceLib.dll
+C:\Users\itsix\Desktop\Repository\NwServiceHost\NwServiceLib\obj\Debug\NwServiceLib.pdb
