@@ -42,15 +42,14 @@
         private void FillGridCustomers()
         {
             using (var client = new ServiceClient())
-            {
-                string msg = "Connection could not be established!";
+            {             
                 try
                 {
                     gridCustomers.ItemsSource = client.GetCustomers();
                 }
                 catch (EndpointNotFoundException)
                 {
-                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show(msg)));
+                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Connection could not be established!")));
                 }
             }
         }
@@ -65,8 +64,7 @@
                 }
                 catch (EndpointNotFoundException)
                 {
-                    var msg = "Connection could not be established!";
-                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show(msg)));
+                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Connection could not be established!")));
                 }
             }
         }
