@@ -1,28 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.ServiceModel;
-using NwServiceClient.NwService;
-
-namespace NwServiceClient
+﻿namespace NwServiceClient
 {
+    using System;
+    using System.ServiceModel;
+    using System.Windows;
+    using System.Windows.Controls;
+    using NwService;
+    
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
-
         public MainWindow()
         {
             InitializeComponent();
@@ -30,11 +18,15 @@ namespace NwServiceClient
 
         private void OnTabSelection(object sender, SelectionChangedEventArgs e)
         {
+            if (tabCustomers.IsSelected)
+            {
+                FillGridCustomers();
+            }
 
-                if (this.tabCustomers.IsSelected)
-                    FillGridCustomers();
-                if (this.tabEmployees.IsSelected)
-                    FillGridEmployees();
+            if (tabEmployees.IsSelected)
+            {
+                FillGridEmployees();
+            }
         }
 
         private void RefreshCustomers(object sender, RoutedEventArgs e)
@@ -49,15 +41,15 @@ namespace NwServiceClient
 
         private void FillGridCustomers()
         {
-            using (ServiceClient client = new ServiceClient())
+            using (var client = new ServiceClient())
             {
+                string msg = "Connection could not be established!";
                 try
                 {
-                    this.gridCustomers.ItemsSource = client.GetCustomers();
+                    gridCustomers.ItemsSource = client.GetCustomers();
                 }
                 catch (EndpointNotFoundException)
                 {
-                    var msg = "Connection could not be established!";
                     Dispatcher.BeginInvoke(new Action(() => MessageBox.Show(msg)));
                 }
             }
@@ -65,11 +57,11 @@ namespace NwServiceClient
 
         private void FillGridEmployees()
         {
-            using (ServiceClient client = new ServiceClient())
+            using (var client = new ServiceClient())
             {
                 try
                 {
-                    this.gridEmployees.ItemsSource = client.GetEmployees(dtpBirth.SelectedDate, dtpHire.SelectedDate);
+                    gridEmployees.ItemsSource = client.GetEmployees(dtpBirth.SelectedDate, dtpHire.SelectedDate);
                 }
                 catch (EndpointNotFoundException)
                 {
